@@ -1,0 +1,9 @@
+{
+  "name": "PersonaParty",
+  "cli": {
+    "version": "0.1.0"
+  },
+  "registry": {
+    "version": 5
+  }
+}
