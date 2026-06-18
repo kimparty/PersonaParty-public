@@ -1,0 +1,41 @@
+{
+  "name": "personaparty",
+  "version": "0.1.0",
+  "description": "PersonaParty 色气工坊：AI role prompt installer for hobby players.",
+  "type": "module",
+  "bin": {
+    "pp": "src/cli.js"
+  },
+  "files": [
+    "src",
+    "registry.system.json",
+    "registry.personas.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node ./src/cli.js",
+    "init:local": "node ./src/cli.js init --registry ./registry.personas.json",
+    "init:local:gemini": "node ./src/cli.js init --registry ./registry.personas.json --agent gemini --persona maid-companion --platform windows --output tmp-test --yes --force",
+    "check": "node --check ./src/cli.js && node --check ./src/commands/init.js && node --check ./src/registry.js && node --check ./src/variables.js && node --check ./src/render.js && node --check ./src/i18n.js && node --check ./src/windows-utf8-bootstrap.js && node --check ./src/persona-template.js && node --check ./src/update-check.js && node --check ./src/file-guard.js && node --check ./src/agent-adapters.js && node --check ./src/prompt-content.js && node --check ./src/installations.js && node --check ./src/app-config.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "cli",
+    "persona",
+    "prompt",
+    "scaffold",
+    "ai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.3.7"
+  }
+}
